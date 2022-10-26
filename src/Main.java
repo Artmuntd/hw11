@@ -35,7 +35,7 @@ public class Main {
     public  static int dayDistanceDelivery(int deliveryDistance){
         int day = 0;
         if (deliveryDistance<= 20){
-            day = day +2;
+            day = day +1;
         } else if (deliveryDistance>= 20 && deliveryDistance<=60) {
             day = day +2;
 
