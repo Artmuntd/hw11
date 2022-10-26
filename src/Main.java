@@ -1,17 +1,56 @@
+import java.time.LocalDate;
+
 public class Main {
-    public  static int leapYear(){
-        int years = 0;
-        for( int year  = 1904; year <= 2096; year ++){
-            if(year % 4==0 && year % 100 !=0 || year % 400 == 0){
+
+    public static int nowYears(){
+        int currentYear = LocalDate.now().getYear();
+       return currentYear;
+    }
+    public static boolean getClientOS(String name) {
+        if (name.equals("iOS")) {
+            return true;
+        } else  {
+            return false;
+        }
+
+
+    }
+
+
+    public static void printlnLeapYear() {
+        int year = 1904;
+        for (; year <= 2096; year++) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+
                 System.out.println(year + " год является вескосным");
-            } else if(year % 4!=0 && year % 100 !=0 || year % 400 != 0  ){
+            } else if (year % 4 != 0 && year % 100 == 0 || year % 400 != 0) {
                 System.out.println(year + " год является не вескосным");
             }
         }
-     return years;
+
+
+
     }
+
     public static void main(String[] args) {
-        System.out.println("зачада 1");
-        System.out.println(leapYear());
+
+        printlnLeapYear();
+        System.out.println("задача 2");
+        String osName = "iOS";
+        boolean clientOS = getClientOS(osName);
+        int yearsMobile = nowYears();
+        if (clientOS == true){
+            System.out.println(true + " нужно установить версию для IOS");
+        } else {
+            System.out.println(false + " нужно установить версию для Android");
+        }
+
+
     }
+
+
+
 }
+
+
+
